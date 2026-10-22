@@ -1,0 +1,6 @@
+@media (min-width: 992px) {
+    .navbar-collapse .w-lg-100 {
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+}
