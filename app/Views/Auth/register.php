@@ -1,8 +1,8 @@
-<?= $this->extend(config('Auth')->views['layout']) ?>
+<?= $this->extend('layouts/master') ?>
 
 <?= $this->section('title') ?><?= lang('Auth.register') ?> <?= $this->endSection() ?>
 
-<?= $this->section('main') ?>
+<?= $this->section('content') ?>
 
     <div class="container d-flex justify-content-center p-5">
         <div class="card col-12 col-md-5 shadow-sm">

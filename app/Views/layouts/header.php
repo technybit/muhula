@@ -30,10 +30,10 @@
         <a class="nav-link" href="<?= base_url('about') ?>">About</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('services') ?>">Services</a>
+        <a class="nav-link" href="<?= base_url('services') ?>">Curriculum</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('contact') ?>">Contact</a>
+        <a class="nav-link" href="<?= base_url('contact') ?>">Talk to us</a>
         </li>
       </ul>
 
@@ -60,11 +60,18 @@
             More Links
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-menu-item dropdown-item" href="#">Action 1</a></li>
-            <li><a class="dropdown-menu-item dropdown-item" href="#">Action 2</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-menu-item dropdown-item" href="#">Something else</a></li>
+              <?php if (session()->get('isLoggedIn')): ?>
+              <!-- Visible ONLY when logged in -->
+              <li><a class="dropdown-menu-item dropdown-item" href="<?= url_to('logout') ?>">Logout</a></li>
+              <?php else: ?>
+              <!-- Visible ONLY when logged out -->
+              <li><a class="dropdown-menu-item dropdown-item" href="<?= url_to('login') ?>">Login</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-menu-item dropdown-item" href="<?= url_to('register') ?>">Register</a></li>
+              <?php endif; ?>
           </ul>
+
+
         </li>
       </ul>
 
